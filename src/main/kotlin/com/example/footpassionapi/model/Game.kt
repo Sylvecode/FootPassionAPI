@@ -62,7 +62,8 @@ class GameService(val gameRep: GameRepository) {
 
 
     fun getRecentGames(): List<GameBean> {
-        return gameRep.findAll(Sort.by(Sort.Direction.DESC, "date"))
+        val allGames = gameRep.findAll(Sort.by(Sort.Direction.DESC, "date"))
+        return allGames.filter { it.fini }
     }
 
     fun getAll() = gameRep.findAll()

@@ -66,5 +66,8 @@ class GameService(val gameRep: GameRepository) {
         return allGames.filter { it.fini }
     }
 
-    fun getAll() = gameRep.findAll()
+    fun getAll(): List<GameBean> {
+        val allGames = gameRep.findAll()
+        return allGames
+    }
 }

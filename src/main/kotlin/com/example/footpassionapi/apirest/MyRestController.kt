@@ -46,4 +46,11 @@ class MyRestController(val gameService: GameService) {
     fun getRecentGames() : List<GameBean> {
         return gameService.getRecentGames()
     }
+
+    //http://localhost:8080/getAll
+    //Récupère la liste de TOUT les matchs
+    @GetMapping("/getAll")
+    fun getAll() : List<GameBean> {
+        return gameService.getAll()
+    }
 }

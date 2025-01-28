@@ -54,3 +54,4 @@ class MyRestController(val gameService: GameService) {
         return gameService.getAll()
     }
 }
+
